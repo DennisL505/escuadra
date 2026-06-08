@@ -24,4 +24,6 @@ en cada PR mediante GitHub Actions.
 
 La política de seguridad completa se encuentra en:
 
-- [docs/seguridad.md](../docs/seguridad.md)
+[docs/seguridad.md](../docs/seguridad.md)
+
+Consulte dicho documento para conocer el procedimiento de reporte responsable de vulnerabilidades, tiempos de respuesta y política de divulgación.
