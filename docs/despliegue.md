@@ -29,7 +29,8 @@ git --version
 # Obtener el código fuente
 
 ## Clonar el repositorio
-Si desea utilizar Escuadra únicamente como usuario:
+
+Si desea utilizar Escuadra como usuario:
 
 ```bash
 git clone https://github.com/sis-inf/escuadra.git
@@ -43,7 +44,11 @@ git clone https://github.com/TU-USUARIO/escuadra.git
 cd escuadra
 ```
 
-Para más detalles sobre el flujo de contribución consulte `CONTRIBUTING.md`.
+Para más detalles sobre el flujo de contribución consulte:
+
+```text
+docs/guia-contribuidor-primeros-pasos.md
+```
 
 ---
 
@@ -105,55 +110,63 @@ Desde el directorio raíz del proyecto ejecutar:
 pip install -e .
 ```
 
-La opción `-e` (*editable*) instala el proyecto enlazándolo al código fuente local. Esto permite que los cambios realizados en el proyecto se reflejen inmediatamente sin necesidad de reinstalar el paquete.
+La opción `-e` (*editable*) instala el proyecto enlazándolo al código fuente local. Esto permite que los cambios realizados en el código se reflejen inmediatamente sin necesidad de reinstalar el paquete.
+
+La instalación registra además el comando:
+
+```bash
+escuadra
+```
+
+definido en el archivo `pyproject.toml`.
 
 ---
 
 # Dependencias de desarrollo (opcional)
 
-Para instalar herramientas adicionales utilizadas durante el desarrollo:
+Si va a contribuir al proyecto o ejecutar pruebas, instale también las dependencias de desarrollo:
 
 ```bash
-pip install -r requirements-dev.txt
+pip install -e ".[dev]"
 ```
 
-Estas dependencias incluyen herramientas para pruebas, validación de código y automatización de tareas de desarrollo.
+Estas dependencias incluyen herramientas para pruebas, validación de código y empaquetado.
 
 ---
 
 # Verificar la instalación
 
-Verificar que el comando de Escuadra esté disponible:
+Verificar que Escuadra esté disponible:
 
 ```bash
 escuadra --help
 ```
 
-o consultar la versión instalada:
+Consultar la versión instalada:
 
 ```bash
 escuadra --version
 ```
 
-También puede verificarse mediante:
+También es posible ejecutar la aplicación mediante:
 
 ```bash
 python -m escuadra --help
 ```
 
-Si la instalación fue exitosa, el comando mostrará la ayuda de la aplicación o la versión instalada.
+Si la instalación fue exitosa, se mostrará la ayuda de la aplicación o la versión instalada.
 
 ---
 
 # Ejecución
 
-Mostrar la ayuda general de la aplicación:
+Mostrar la ayuda general:
 
 ```bash
 escuadra --help
 ```
 
-También es posible ejecutar el paquete directamente:
+Ejecutar el paquete directamente:
 
 ```bash
 python -m escuadra
@@ -212,6 +225,6 @@ pip install -e .
 # Documentación relacionada
 
 * README.md
-* CONTRIBUTING.md
+* docs/guia-contribuidor-primeros-pasos.md
 * docs/arquitectura.md
 * pyproject.toml
