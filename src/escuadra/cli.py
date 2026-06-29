@@ -6,6 +6,8 @@ Punto de entrada principal con subcomandos para las herramientas.
 import argparse
 import sys
 
+from escuadra.cli_interactivo import ejecutar_interactivo
+
 def verificar_entorno():
     """Verifica la versión de Python y la disponibilidad de PySide6."""
 
@@ -86,6 +88,12 @@ def main():
             help="Herramienta a ejecutar"
         )
 
+        # Subcomando: interactivo
+        interactivo_parser = subparsers.add_parser(
+            "interactivo",
+            help="Modo interactivo paso a paso (REPL)"
+        )
+
         # Subcomando: viga
         viga_parser = subparsers.add_parser("viga", help="Cálculo de reacciones en vigas")
         viga_parser.add_argument("--longitud", type=float, required=True, help="Longitud de la viga en metros")
@@ -102,6 +110,11 @@ def main():
         if args.herramienta is None:
             parser.print_help()
             sys.exit(0)
+             
+        # Modo interactivo
+        if args.herramienta == "interactivo":
+           ejecutar_interactivo()
+           return
 
         ejecutar_herramienta(args)
 
