@@ -6,6 +6,7 @@ Punto de entrada principal con subcomandos para las herramientas.
 import argparse
 import sys
 import json
+import argcomplete
 
 from escuadra.cli_interactivo import ejecutar_interactivo
 
@@ -164,6 +165,8 @@ def main():
             required=True,
             help="Sección del conductor en mm²"
         )
+
+        argcomplete.autocomplete(parser)
 
         args = parser.parse_args()
 
